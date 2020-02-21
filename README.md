@@ -51,6 +51,41 @@ In this example, we see attributes for a class. At the top of the file, we see p
 
 ## **Abstraction**
 With Abstraction, we are only trying to display the high-level mechanism for using it. As it is an extension of encapsulation, many of the basic ideas overlap. However, with abstraction there are many small methods that are able to call on a function without having to know how it works. 
+```
+using System;
+
+abstract class Majors //abstract class
+{
+    public abstract int GetGPA(); //abstract method
+}
+
+class CS : Majors
+{
+    private int grade;
+    public CS(int g)
+    {
+        grade = g;
+    }
+    public override int GetGPA()
+    {
+        return grade;
+    }
+}
+
+class English : Majors
+{
+    private int grade;
+    public English(int g)
+    {
+        grade = g;
+    }
+    public override int GetGPA()
+    {
+        return grade;
+    }
+}
+```
+Here we have the abstract class Major, and we want to store all the GPAs for each major. We create an instance of majors CS and English, which share common attributes but call on variables that are available within their own subclasses. However, for the main abstract class, we are only concerned with the GPA across all majors, and not really what goes on inside each individual major. It only reveals the operation relevant to the other methods included. 
 
  ## **Inheritance**
  Inheritance allows us to create a class that acts as a _child_ of an existing class. Basically, it inherits any properties of its parent, but can expand from there. Each child only adds what it needs to. Let us examine the example below.
