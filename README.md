@@ -15,12 +15,13 @@ namespace Encapsulation
 {
     public class Course
     {
-        private String CourseName;
-        private int classSize;
+        private String CourseName; //private variables initialized
+        private int classSize; 
 
         public string Courses
         {
-            get
+        //accessor that allows access to the private variables
+            get 
             {
                 return CourseName;
             }
@@ -46,11 +47,75 @@ namespace Encapsulation
         }
     }
 ```
-In this example, we see attributes for a class. At the top of the file, we see private variables CourseName and classSize. By using *get and *set, the accessors Courses and Size gain access to the private variables for their own use. Without the accessors, the data would be locked away and inaccessible to other functions. 
+In this example, we see attributes for a class. At the top of the file, we see private variables CourseName and classSize. By using _get_ and _set_, the accessors Courses and Size gain access to the private variables for their own use. Without the accessors, the data would be locked away and inaccessible to other functions. 
 
 ## **Abstraction**
 With Abstraction, we are only trying to display the high-level mechanism for using it. As it is an extension of encapsulation, many of the basic ideas overlap. However, with abstraction there are many small methods that are able to call on a function without having to know how it works. 
 
  ## **Inheritance**
+ Inheritance allows us to create a class that acts as a _child_ of an existing class. Basically, it inherits any properties of its parent, but can expand from there. Each child only adds what it needs to. Let us examine the example below.
+ ```
+ using System;
+
+namespace Inheritance
+{
+      public class Shape
+        {
+            public void setAttributes(double w, double h)
+            {
+                width = w;
+                height = h;
+            }
+
+        protected double width;
+        protected double height;
+
+        }
+
+        public class Rectangle : Shape //Rectangle extends Shape
+        {
+            public double Perimeter(double width, double height) //return perimeter of rectangle
+            {
+                return 2 * width + 2 * height;
+            }
+
+            public double Area(double width, double height) //return area of rectangle
+            {
+                return width * height;
+            }
+           
+
+        }
+   
+}
+```
+Here we have parent class Shape. Its child Rectangle takes in the properties of shape (After all, rectangles are shapes, right?). Rectangle then extends shape and inherits the values for width and height. From here, we can calculate the perimeter and area of the rectangle!
  
  ## **Polymorphism**
+The final principal is polymorphism. Polymorphism means "many shapes", so based off of that we can say that polymorphism takes one object and shifts into many different versions of itself. Input is taken in by the system and then evaluated to fit in the correct function. 
+```
+using System;
+
+namespace Polymorphism
+{
+    public class polymorphism
+    {
+        
+            public int Sum(int a, int b)
+            {
+                var sum = a + b;
+                return sum;
+            }
+
+            public double Sum(double a, double b)
+            {
+                var sum = a + b;
+                return sum;
+            }
+
+        
+    }
+}
+```
+For example, we can have multiple methods called Sum. If the system receives integers as input, the compiler will implement the first Sum function. It will keep searching until it finds an appropriate method to execute the query. 
+
