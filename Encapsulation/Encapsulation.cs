@@ -4,8 +4,10 @@ namespace Encapsulation
 {
     public class Course
     {
-        
-        public string CourseName
+        private String CourseName;
+        private int classSize;
+
+        public string Courses
         {
             get
             {
@@ -17,7 +19,7 @@ namespace Encapsulation
             }
         }
 
-        public int classSize
+        public int Size
         {
 
             get
@@ -32,15 +34,5 @@ namespace Encapsulation
 
         }
     }
-    class Driver
-    {
-
-        // Main Method 
-        static public void Main()
-        {
-            Course c = new Course();
-            c.CourseName = "Math";
-            c.classSize = 21;
-        }
-    }
+    
 }
