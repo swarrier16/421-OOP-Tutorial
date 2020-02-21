@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/swarrier16/421-OOP-Tutorial.svg?branch=master)](https://travis-ci.org/swarrier16/421-OOP-Tutorial)
+
 # 421-OOP-Tutorial
 
 When it comes to Object-Oriented Programming (OOP), there are 4 main principles: **Encapsulation, Abstraction, Inheritance,** and **Polymorphism**. It is important to have a good understanding of these principles if you want to write a program that functions properly. 
